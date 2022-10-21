@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,700,800,900&display=swap');
+    *{
+            margin:0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+    body{
+        min-height: 100vh;
+        background: black;
+        /* overflow-x: hidden; */
+        /* background: linear-gradient(#2b1055, #7597de); */
+     }
+     header{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10000;
+     }
+     header .logo{
+        text-decoration: none;
+        font-weight: 700;
+        color: #fff;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+     }
+     header ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     header ul li{
+        list-style-type: none;
+        margin-left: 20px;
+     }
+     header ul li a{
+        text-decoration: none;
+        color: #fff;
+        padding: 6px 15px;
+        border-radius: 20px;
+     }
+     header ul li a:hover,
+     header ul li a.active{
+        background: #fff;
+        color: #2b1055;
+     }
+
+     section{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+     }
+     section::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to top, #1c0522,transparent);
+        z-index: 1000;
+     }
+     section img{
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       pointer-events: none;
+     }
+     section img#moon{
+        mix-blend-mode: screen;
+     }
+     section img#mountains_front{
+        z-index: 10;
+     }
+     #text-h2{
+        right: -350px;
+        position: absolute;
+        color: #fff;
+        white-space: nowrap;
+        font-size: 7.5vw;
+        z-index: 9;
+     }
+     #btn{
+        transform: translateY(100px);
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 30px;
+        background: #fff;
+        border-radius: 40px;
+        font-size: 1.5em;
+        color: #2b1055;
+        z-index: 9;
+     }
+     .sec{
+        position: relative;
+        padding: 100px;
+        margin-bottom: 10px;
+        background: #1c0522;
+     }
+     .sec h2{
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        color: #fff;
+     }
+     .sec p{
+        font-size: 1em;
+        color: #fff;
+     }
+      .text span{
+        display: inline-block;
+       }
+       .launch-time{
+         color: #fff;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+        }
+        .launch-time div{
+            flex-basis: 120px;
+            text-align: center;
+            background-color: #db0c62;
+            margin: 5px;
+            border-radius: 28px;
+            margin-top: 10px;
+        }
+        .launch-time div p{
+            font-size: 60px;
+            margin-bottom: 14px;
+        }
+        .heart{
+            margin-top: -28px;
+            width: 80px;
+            height: 80px;
+            background: red;
+            margin-top: 56px;
+            display: flex;
+            position: relative;
+            transform: rotate(135deg);
+            box-shadow: inset -2px -2px 6px rgb(221, 103, 124),
+            inset 2px 2px 6px rgba(207, 178, 178, 0.1);
+            animation: name duration timing-function delay iteration-count direction fill-mode;
+        }
+        @keyframes name{
+            0%{
+                rotate: 10deg;
+            }
+            20%{
+                rotate: 20deg;
+            }
+            40%{
+                rotate: 40deg;
+            }
+            60%{
+                rotate: 60deg;
+            }
+            80%{
+                rotate: 80deg;
+            }
+            100%{
+                rotate: 100deg;
+            }
+        }
+        .heart:before{
+            content: '';
+            top: 50%;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            background-color: red;
+            border-radius: 50px;
+    
+        }
+        .heart::after{
+            content: '';
+            right: 50%;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            background-color: red;
+            border-radius: 50px;
+        }
+        .rainy-0709{
+            color: #fff;
+            font-size: 28px;
+            text-align: center;
+            margin-top: 17px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+            Logo
+        </a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" alt="" id="stars">
+        <img src="moon.png" alt="" id="moon">
+        <img src="mountains_behind.png" alt="" id="mountains_behind">
+        <h2 id="text-h2">Anime<span>JS</span></h2>
+        <a href="#" id="btn">Play</a>
+        <img src="mountains_front.png" alt="" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with 
+            desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+    <div class="launch-time">
+      <div>
+         <p id="days">00</p>
+         <span>Days</span>
+      </div>
+      <div>
+         <p id="hours">00</p>
+         <span>Hours</span>
+      </div>
+      <div>
+         <p id="minutes">00</p>
+         <span>Minutes</span>
+      </div>
+      <div>
+         <p id="seconds">00</p>
+         <span>Seconds</span>
+      </div>
+   </div>
+   
+   <center>
+    <div class="heart">
+            
+    </div>
+   </center>
+  <center>
+    <div class="rainy-0709">
+        <h1>A rainy day!</h1>
+        <p class="day0709">
+            #07/09/2022
+        </p>
+    </div>
+  </center>
+    
+   
+    <script src="anime.min.js">
+
+    </script>
+    
+    
+<script>
+
+   var countDownDate = new Date("Sep 7, 2023 17:02:28").getTime();
+   
+   var x = setInterval(function() {
+   
+     var now = new Date().getTime();
+   
+     var distance = countDownDate - now;
+   
+     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+   
+     document.getElementById("days").innerHTML = days;
+     document.getElementById("hours").innerHTML = hours;
+     document.getElementById("minutes").innerHTML = minutes;
+     document.getElementById("seconds").innerHTML = seconds;
+   
+     if (distance < 0) {
+       clearInterval(x);
+       document.getElementById("days").innerHTML = "00";
+       document.getElementById("hours").innerHTML = "00";
+       document.getElementById("minutes").innerHTML = "00";
+       document.getElementById("seconds").innerHTML = "00";
+     }
+   }, 1000);
+   </script>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text-h2');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+    <script>
+      const text1 = document.querySelector('.text');
+      text1.innerHTML = text1.textContent.replace(/\S/g, "<span>$&</span>");
+      
+      const animation = anime.timeline({
+          targets : '.text span',
+          easing: 'easeInOutExpo',
+          loop: true,
+      });
+      
+      animation
+      .add({
+          rotate: function(){
+              return anime.random(-360,360)
+          },
+          translateX: function(){
+              return anime.random(-500,500)
+          },
+          translateY: function(){
+              return anime.random(-500,500)
+          },
+          duration: 5000,
+          delay: anime.stagger(20),
+      })
+
+      .add({
+          rotate: 0,
+          translateX: 0,
+          translateY: 0,
+          duration: 5000,
+          delay: anime.stagger(20),
+      })
+  </script>
+</body>
+</html>
